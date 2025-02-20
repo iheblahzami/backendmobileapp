@@ -41,17 +41,18 @@ const sendEmail = async (bookingDetails) => {
 
 // API Route for sending emails
 app.post("/send-email", async (req, res) => {
-    try {
-      console.log("Received booking details:", req.body); // Debugging
-      await sendEmail(req.body);
-      const response = { success: true, message: "Email sent successfully" };
-      console.log("Response being sent:", response); // Log response
-      res.status(200).json(response);
-    } catch (error) {
-      console.error("Error sending email:", error);
-      res.status(500).json({ success: false, message: "Failed to send email" });
-    }
-  });
+  console.log("Received booking details:", req.body); // Debugging
+  try {
+    await sendEmail(req.body);
+    const response = { success: true, message: "Email sent successfully" };
+    console.log("Response being sent:", response); // Log response
+    res.status(200).json(response);
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).json({ success: false, message: "Failed to send email" });
+  }
+});
+
   
 
 // Start server
