@@ -10,9 +10,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@emailjs/nodejs": "^5.0.2",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "emailjs": "^4.0.3",
+    "emailjs-com": "^3.2.0",
     "express": "^4.21.2",
     "nodemailer": "^6.10.0"
   }
